@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyDocterProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="find_random_medical">Medical Around You</string>
+    <string name="action_settings">Settings</string>
+    <string name="sympton_comment">Diagnosed</string>
+    <string name="register_medical_service">Register Medical</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

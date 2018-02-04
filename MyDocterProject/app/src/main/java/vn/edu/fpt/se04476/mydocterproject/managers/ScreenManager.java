@@ -9,6 +9,10 @@ import android.support.v4.app.FragmentTransaction;
  */
 
 public class ScreenManager{
+    /*
+        - Open another fragment
+        - Add old fragment to stack => press 'back button' will return old fragment
+     */
         public static void openFragment(FragmentManager fragmentManager, Fragment fragment,
                                         int layoutID, boolean addToBackStack, boolean haveAnimation){
             FragmentTransaction fragmentTransaction = fragmentManager
@@ -22,6 +26,7 @@ public class ScreenManager{
             }
             fragmentTransaction.commit();
         }
+
 
         public static void backFragment(FragmentManager fragmentManager){
             fragmentManager.popBackStack();

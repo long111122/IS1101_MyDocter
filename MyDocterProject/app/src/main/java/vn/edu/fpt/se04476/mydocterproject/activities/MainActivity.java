@@ -18,6 +18,8 @@ import android.support.v7.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         identifyVariable();
         setupUI();
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressLint("ResourceType")
     private void identifyVariable() {
+        // Add function include image, color background and name to category
         homePageForGuestList = new ArrayList<>();
         homePageForGuestList.add(new FunctionType(
                 getResources().getString(R.string.find_random_medical),
@@ -68,7 +73,7 @@ public class MainActivity extends AppCompatActivity
         );
         homePageForGuestList.add(new FunctionType(
                 getResources().getString(R.string.find_random_medical),
-                R.drawable.ic_search_button,
+                R.drawable.ic_about,
                 getResources().getString(R.color.blueSecondDark))
         );
 
@@ -77,7 +82,9 @@ public class MainActivity extends AppCompatActivity
     private void setupUI() {
         ButterKnife.bind(this);
         rvFunction = findViewById(R.id.rv_function);
-        //recycle view function
+
+        //Recycle view function
+        //Divide 2 column image here
         homePageFunctionAdapter = new HomePageFunctionAdapter(homePageForGuestList, getApplicationContext());
         GridLayoutManager gridLayoutManager = new GridLayoutManager(
                 getApplicationContext(),
@@ -89,6 +96,7 @@ public class MainActivity extends AppCompatActivity
         rvFunction.setLayoutManager(gridLayoutManager);
         rvFunction.setOnClickListener(this);
 
+        //toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

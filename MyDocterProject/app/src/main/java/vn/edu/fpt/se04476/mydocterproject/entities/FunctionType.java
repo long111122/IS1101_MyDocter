@@ -5,14 +5,20 @@ package vn.edu.fpt.se04476.mydocterproject.entities;
  */
 
 public class FunctionType {
+    private int tagId;
     private String type;
     private int imageResource;
     private String backgroundColor;
 
-    public FunctionType(String type, int imageResource, String color) {
+    public FunctionType(int tagId, String type, int imageResource, String color) {
         this.type = type;
         this.imageResource = imageResource;
         this.backgroundColor = color;
+        this.tagId = tagId;
+    }
+
+    public int getTagId() {
+        return tagId;
     }
 
     public String getType() {

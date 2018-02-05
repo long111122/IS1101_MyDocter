@@ -1,10 +1,9 @@
 package vn.edu.fpt.se04476.mydocterproject.activities;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,23 +19,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import vn.edu.fpt.se04476.mydocterproject.R;
 import vn.edu.fpt.se04476.mydocterproject.adapters.HomePageFunctionAdapter;
 import vn.edu.fpt.se04476.mydocterproject.entities.FunctionType;
-import vn.edu.fpt.se04476.mydocterproject.fragments.HomePageForGuest;
+import vn.edu.fpt.se04476.mydocterproject.fragments.SearchAroundFragment;
+import vn.edu.fpt.se04476.mydocterproject.managers.HeadlinesFragmentManager;
 import vn.edu.fpt.se04476.mydocterproject.managers.ScreenManager;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, SearchAroundFragment.OnFragmentInteractionListener, HeadlinesFragmentManager.OnHeadlineSelectedListener {
     private List<FunctionType> homePageForGuestList;
     private HomePageFunctionAdapter homePageFunctionAdapter;
+    private Button btnSignin;
 
     private RecyclerView rvFunction;
 
@@ -48,8 +48,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         identifyVariable();
         setupUI();
+        setAction();
+    }
 
-
+    private void setAction() {
+        btnSignin.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceType")
@@ -57,21 +60,25 @@ public class MainActivity extends AppCompatActivity
         // Add function include image, color background and name to category
         homePageForGuestList = new ArrayList<>();
         homePageForGuestList.add(new FunctionType(
+                0,
                 getResources().getString(R.string.find_random_medical),
                 R.drawable.ic_search_button,
                 getResources().getString(R.color.bluePrimaryDark))
         );
         homePageForGuestList.add(new FunctionType(
+                1,
                 getResources().getString(R.string.sympton_comment),
                 R.drawable.ic_sympton,
                 getResources().getString(R.color.orangePrimaryDark))
         );
         homePageForGuestList.add(new FunctionType(
+                2,
                 getResources().getString(R.string.register_medical_service),
                 R.drawable.ic_register_emergency,
                 getResources().getString(R.color.purpilDark))
         );
         homePageForGuestList.add(new FunctionType(
+                3,
                 getResources().getString(R.string.find_random_medical),
                 R.drawable.ic_about,
                 getResources().getString(R.color.blueSecondDark))
@@ -82,6 +89,7 @@ public class MainActivity extends AppCompatActivity
     private void setupUI() {
         ButterKnife.bind(this);
         rvFunction = findViewById(R.id.rv_function);
+        btnSignin = findViewById(R.id.btn_sign_in);
 
         //Recycle view function
         //Divide 2 column image here
@@ -94,7 +102,7 @@ public class MainActivity extends AppCompatActivity
         );
         rvFunction.setAdapter(homePageFunctionAdapter);
         rvFunction.setLayoutManager(gridLayoutManager);
-        rvFunction.setOnClickListener(this);
+        homePageFunctionAdapter.setOnItemClickListener(this);
 
         //toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -148,8 +156,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_new_feed) {
             // Handle the camera action
+            Intent intentNewFeed = new Intent(this, NewFeedActivity.class);
+            startActivity(intentNewFeed);
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -169,7 +179,50 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onClick(View view) {
-        HomePageFunctionAdapter homePageFunctionAdapter = (HomePageFunctionAdapter) view.getTag();
+        try {
+        //1. On Click Event for Item
+        switch (view.getId()){
+            case R.id.btn_sign_in:
+                Intent intentSearchAround = new Intent(this, SignInActivity.class);
+                startActivity(intentSearchAround);
+                break;
+        }
+
+        //2. On Click Event for recyclview
+        FunctionType functionType = (FunctionType) view.getTag();
         //Move to new Fragment here
+
+            switch (functionType.getTagId()) {
+                case 0:
+                    Intent intentSearchAround = new Intent(this, SearchAroundActivity.class);
+                    startActivity(intentSearchAround);
+                    break;
+
+                case 1:
+                    Intent intentNewFeed = new Intent(this, PostSymptonActivity.class);
+                    startActivity(intentNewFeed);
+                    break;
+
+                case 2:
+
+                    break;
+
+                case 3:
+
+                    break;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onArticleSelected(int position) {
+
     }
 }

@@ -59,7 +59,6 @@ public class HomePageFunctionAdapter extends RecyclerView.Adapter<HomePageFuncti
         return listFunction.size();
     }
 
-
     public class HomePageFunctionViewHolder extends RecyclerView.ViewHolder{
         @BindView(R.id.tv_function_name)
         TextView tvFunctionName;

@@ -4,11 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="15dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="vn.edu.fpt.se04476.mydocterproject.fragments.LoginFragment">
 
@@ -24,7 +20,7 @@
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -33,7 +29,7 @@
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Password (6-15 characters)"
         android:inputType="textPassword" />
@@ -41,27 +37,27 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:gravity="right"
         android:text="Forgot password" />
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:text="LOGIN" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:text="Or Log in with:" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
 
         <Button

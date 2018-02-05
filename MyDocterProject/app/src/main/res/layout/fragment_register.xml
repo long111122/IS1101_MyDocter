@@ -3,16 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="15dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp"
     android:orientation="vertical"
     tools:context="vn.edu.fpt.se04476.mydocterproject.fragments.RegisterFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
 
         <EditText
@@ -32,7 +28,7 @@
         android:id="@+id/editText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress" />
@@ -40,7 +36,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Address"
         android:inputType="textPostalAddress" />
@@ -48,7 +44,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Phone"
         android:inputType="phone" />
@@ -57,7 +53,7 @@
         android:id="@+id/editText3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:ems="10"
         android:hint="Password (6-15 characters)"
         android:inputType="textPassword" />
@@ -66,20 +62,20 @@
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:text="CREATE ACCOUNT" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:text="Or Sign up with:" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_margin="16dp"
         android:orientation="horizontal">
 
         <Button

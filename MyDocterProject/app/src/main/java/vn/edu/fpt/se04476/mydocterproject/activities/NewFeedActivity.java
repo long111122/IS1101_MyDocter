@@ -86,7 +86,7 @@ public class NewFeedActivity extends AppCompatActivity implements View.OnClickLi
                 getResources().getString(R.string.sample_content),
                 "Demo Post - Sample",
                 null,
-                false
+                true
         ));
     }
 

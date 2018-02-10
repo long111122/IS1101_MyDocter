@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "380111633429",
+    "firebase_url": "https://mydocterproject.firebaseio.com",
+    "project_id": "mydocterproject",
+    "storage_bucket": "mydocterproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380111633429:android:94b0e49b8f143865",
+        "android_client_info": {
+          "package_name": "vn.edu.fpt.se04476.mydocterproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380111633429-r67uds4qpavkqi52v8q9bpandcsorkoi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.edu.fpt.se04476.mydocterproject",
+            "certificate_hash": "2ae98b403b9cd8aa058c8a538316987a79d963fc"
+          }
+        },
+        {
+          "client_id": "380111633429-tsl8q7g3h6nqm04em97ngaituignmj93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoq-fviiVSfETP7sFV9WNV1804RETqYGA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380111633429-tsl8q7g3h6nqm04em97ngaituignmj93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

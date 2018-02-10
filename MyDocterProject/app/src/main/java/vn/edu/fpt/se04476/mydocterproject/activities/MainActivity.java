@@ -71,19 +71,20 @@ public class MainActivity extends AppCompatActivity
                 R.drawable.ic_sympton,
                 getResources().getString(R.color.orangePrimaryDark))
         );
-        homePageForGuestList.add(new FunctionType(
-                2,
-                getResources().getString(R.string.register_medical_service),
-                R.drawable.ic_register_emergency,
-                getResources().getString(R.color.purpilDark))
-        );
+
         homePageForGuestList.add(new FunctionType(
                 3,
-                getResources().getString(R.string.find_random_medical),
+                getResources().getString(R.string.emergency_call),
+                R.drawable.ic_emergency_call,
+                getResources().getString(R.color.redEmergency))
+        );
+
+        homePageForGuestList.add(new FunctionType(
+                3,
+                getResources().getString(R.string.about),
                 R.drawable.ic_about,
                 getResources().getString(R.color.blueSecondDark))
         );
-
     }
 
     private void setupUI() {

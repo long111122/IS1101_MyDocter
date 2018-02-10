@@ -21,10 +21,16 @@
         </activity>
         <activity android:name=".activities.SearchAroundActivity" />
         <activity android:name=".activities.NewFeedActivity" />
-        <activity android:name=".activities.PostSymptonActivity" />
         <activity
             android:name=".activities.SignInActivity"
             android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.LocationDetailActivity" />
+        <activity android:name=".activities.AppliedMedicalActivity" />
+        <activity android:name=".activities.PostSymptonActivity" />
+        <activity
+            android:name=".activities.MedicalServiceActivity"
+            android:label="@string/title_activity_medical_service"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

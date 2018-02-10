@@ -1,6 +1,7 @@
 package vn.edu.fpt.se04476.mydocterproject.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import jp.wasabeef.picasso.transformations.CropCircleTransformation;
 import vn.edu.fpt.se04476.mydocterproject.R;
+import vn.edu.fpt.se04476.mydocterproject.activities.AppliedMedicalActivity;
 import vn.edu.fpt.se04476.mydocterproject.entities.PostInformation;
 
 /**
@@ -60,6 +62,8 @@ public class PostPageAdapter extends RecyclerView.Adapter<PostPageAdapter.PostPa
         private TextView tvTitle;
         private TextView tvContent;
         private ImageView ivPostInclude;
+        private ImageView ivApply;
+        private TextView tvMedicalApply;
 
         public PostPageViewHolder(View itemView) {
             super(itemView);
@@ -74,12 +78,42 @@ public class PostPageAdapter extends RecyclerView.Adapter<PostPageAdapter.PostPa
             tvTitle = view.findViewById(R.id.tv_post_title);
             tvContent = view.findViewById(R.id.tv_content);
             ivPostInclude = view.findViewById(R.id.iv_post_image);
+            ivApply = view.findViewById(R.id.iv_wait_apply);
+            tvMedicalApply = view.findViewById(R.id.tv_docter_name);
         }
 
         public void setData(PostInformation postInformation){
             //1. Set avatar and image included
             Picasso.with(context).load(postInformation.getAvaImage()).transform(new CropCircleTransformation()).into(ivAvatar);
             Picasso.with(context).load(postInformation.getPostImage()).into(ivPostInclude);
+
+            if (postInformation.isApplied()) {
+                ivApply.setImageDrawable(view.getResources().getDrawable(R.drawable.ic_apply));
+                tvMedicalApply.setText("Applied by 4 medical facilities");
+                tvMedicalApply.setTextColor(view.getResources().getColor(R.color.colorLoginButton));
+                ivApply.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent detailAppliedMedicalIntent = new Intent(context, AppliedMedicalActivity.class);
+                        context.startActivity(detailAppliedMedicalIntent);
+                    }
+                });
+                tvMedicalApply.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent detailAppliedMedicalIntent = new Intent(context, AppliedMedicalActivity.class);
+                        context.startActivity(detailAppliedMedicalIntent);
+                    }
+                });
+            } else {
+                ivApply.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ivApply.setImageDrawable(view.getResources().getDrawable(R.drawable.ic_apply));
+                        tvMedicalApply.setText("Applied by 4 medical facilities");
+                    }
+                });
+            }
 
             //2. Set text to header
             tvUsername.setText(postInformation.getUser());
@@ -88,7 +122,6 @@ public class PostPageAdapter extends RecyclerView.Adapter<PostPageAdapter.PostPa
             //3. Set text to content
             tvTitle.setText(postInformation.getTitle());
             tvContent.setText(postInformation.getContent());
-
         }
     }
 }

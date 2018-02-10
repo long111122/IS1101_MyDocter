@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import vn.edu.fpt.se04476.mydocterproject.R;
 
 /**
@@ -27,6 +30,8 @@ public class LoginFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private FirebaseAuth mAuth;
+    private String mCustomToken;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +70,34 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view =  inflater.inflate(R.layout.fragment_login, container, false);
+        setupUI();
+        identifyVariable();
+
+        return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //Check if user is signed in
+        FirebaseUser wFirebaseUser = mAuth.getCurrentUser();
+        updateUI(wFirebaseUser);
+    }
+
+    private void identifyVariable() {
+        mAuth = FirebaseAuth.getInstance();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    private void updateUI(FirebaseUser currentUser) {
+
+    }
+
+    private void setupUI() {
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

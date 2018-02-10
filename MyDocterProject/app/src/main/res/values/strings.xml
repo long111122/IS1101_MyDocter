@@ -1,16 +1,18 @@
 <resources>
-    <string name="app_name">MyDocterProject</string>
+    <string name="app_name">MyDoctorProject</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="find_random_medical">Medical Around You</string>
+    <string name="emergency_call">Emergency Call</string>
     <string name="action_settings">Settings</string>
     <string name="sympton_comment">Diagnosed</string>
     <string name="register_medical_service">Register Medical</string>
-    <string name="welcome">Welcome to My Docter</string>
+    <string name="welcome">Welcome to My Doctor</string>
     <string name="connect_title">Connect your account for the best custom experience</string>
     <string name="category">All Categories</string>
-    <string name="search_title_toolbar">Search medicals, docters</string>
+    <string name="search_title_toolbar">Search medicals, doctors</string>
+    <string name="search_location">Search Medical Location</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="distance_spinner">
@@ -24,6 +26,12 @@
     <string name="sample_content">I don\'t believe that if you do good, good things will happen.Everything is accidental and random.</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="spinner_promt">Choose Medical Type</string>
+    <string name="remember_me">Remember me</string>
     <string name="tab_text_1">Login</string>
     <string name="tab_text_2">Register</string>
+    <string name="about">About My Doctor</string>
+    <string name="title_activity_medical_service">MedicalServiceActivity</string>
+    <string name="tab_text_3">News</string>
+    <string name="tab_text4">Emergency</string>
 </resources>

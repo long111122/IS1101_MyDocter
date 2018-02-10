@@ -66,4 +66,8 @@ public class PostInformation {
     public boolean isApplied() {
         return isApplied;
     }
+
+    public void setApplied(boolean applied) {
+        this.isApplied = applied;
+    }
 }

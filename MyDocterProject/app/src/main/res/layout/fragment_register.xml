@@ -1,93 +1,211 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorWhite"
     tools:context="vn.edu.fpt.se04476.mydocterproject.fragments.RegisterFragment">
-    <LinearLayout
+
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:src="@drawable/ic_logo"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:layout_marginRight="8dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Username" />
+        <View
+            android:id="@+id/view_user_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorFormTransform" />
 
         <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Password" />
-    </LinearLayout>
+            android:id="@+id/edt_user_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/greyLight"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Name"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/black"
+            />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        <View
+            android:id="@+id/view_username_rg"
+            android:layout_width="match_parent"
+            android:layout_below="@id/edt_user_rg"
+            android:layout_height="50dp"
+            android:background="@color/colorFormTransform" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:hint="Address"
-        android:inputType="textPostalAddress" />
+        <EditText
+            android:id="@+id/edt_username_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/edt_user_rg"
+            android:backgroundTint="@color/greyLight"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Username"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/black"
+            />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:hint="Phone"
-        android:inputType="phone" />
+        <View
+            android:id="@+id/view_address_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/view_username_rg"
+            android:background="@color/colorFormTransform" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:ems="10"
-        android:hint="Password (6-15 characters)"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/edt_address_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/greyLight"
+            android:layout_below="@id/view_username_rg"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Address"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/black"
+            />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="CREATE ACCOUNT" />
+        <View
+            android:id="@+id/view_phone_rg"
+            android:layout_width="match_parent"
+            android:layout_below="@id/view_address_rg"
+            android:layout_height="50dp"
+            android:background="@color/colorFormTransform" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Or Sign up with:" />
+        <EditText
+            android:id="@+id/edt_phone_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/view_address_rg"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/greyLight"
+            android:ems="10"
+            android:hint="Phone"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/black"
+            />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal">
+        <View
+            android:id="@+id/view_password_rg"
+            android:layout_width="match_parent"
+            android:layout_below="@id/view_phone_rg"
+            android:layout_height="50dp"
+            android:background="@color/colorFormTransform" />
 
+        <EditText
+            android:id="@+id/edt_password_rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/view_phone_rg"
+            android:backgroundTint="@color/greyLight"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="Password"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/black"/>
+        
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Google" />
+            android:layout_below="@+id/view_password_rg"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:text="REGISTER"
+            android:textColor="@color/colorLoginButton"
+            />
+    </RelativeLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="Facebook" />
-    </LinearLayout>
+    <!--<EditText-->
+    <!--android:id="@+id/editText2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="Email"-->
+    <!--android:inputType="textEmailAddress" />-->
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="Address"-->
+    <!--android:inputType="textPostalAddress" />-->
+
+    <!--<EditText-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="Phone"-->
+    <!--android:inputType="phone" />-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/editText3"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="Password (6-15 characters)"-->
+    <!--android:inputType="textPassword" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/button2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:text="CREATE ACCOUNT" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView2"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:text="Or Sign up with:" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="16dp"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Google" />-->
+
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:text="Facebook" />-->
+    <!--</LinearLayout>-->
 
 </LinearLayout>

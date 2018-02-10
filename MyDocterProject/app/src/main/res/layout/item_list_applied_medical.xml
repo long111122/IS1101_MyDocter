@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@color/colorWhite"
+    >
+    <TextView
+        android:id="@+id/tv_medical_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Name"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        />
+    
+    <ImageView
+        android:id="@+id/iv_rating"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:scaleType="fitXY"
+        android:layout_below="@id/tv_medical_name"
+        android:src="@drawable/ic_rating"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_rating"
+        android:layout_alignTop="@id/iv_rating"
+        android:layout_marginTop="3dp"
+        android:text="4.0(51)"
+        android:textSize="18sp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_medical_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_sample_location"
+        android:scaleType="centerCrop"
+        />
+
+    <Button
+        android:id="@+id/btn_view_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_rating"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="View Detail"
+        android:gravity="center"
+        android:textColor="@color/colorLoginButton"
+        android:background="@color/colorWhite"
+        />
+
+    <Button
+        android:id="@+id/btn_apply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_rating"
+        android:layout_toRightOf="@+id/btn_view_detail"
+        android:text="Apply"
+        android:paddingLeft="8dp"
+        android:textColor="@color/colorLoginButton"
+        android:background="@color/colorWhite"
+        />
+</RelativeLayout>

@@ -1,81 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
-    android:orientation="vertical">
+    tools:context="vn.edu.fpt.se04476.mydocterproject.activities.PostSymptonActivity">
+    <TextView
+        android:id="@+id/tv_type_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Medical Type"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/spn_medical_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_toRightOf="@id/tv_type_support"
+        android:prompt="@string/spinner_promt">
+    </Spinner>
+
+    <EditText
+        android:id="@+id/edt_sympton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"></LinearLayout>
+        android:layout_below="@id/tv_type_support"
+        android:layout_marginTop="16dp"
+        android:hint="Sympton"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/edt_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="6"
-        android:orientation="vertical">
+        android:layout_below="@id/edt_sympton"
+        android:layout_marginTop="8dp"
+        android:hint="Other Description"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_add_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add image"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/edt_description"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choose 1" />
+    <ImageView
+        android:id="@+id/iv_add_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/tv_add_image"
+        android:layout_margin="16dp"
+        android:background="@color/colorWhite"
+        android:src="@drawable/ic_add_image"
+        android:scaleType="centerCrop"
+        />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp">
-            </Spinner>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choose 2" />
-
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"></Spinner>
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Comment:" />
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:inputType="textMultiLine" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit" />
-    </LinearLayout>
-</LinearLayout>
+        android:layout_margin="20dp"
+        android:background="@color/colorWhite"
+        android:text="Post"
+        android:textColor="@color/orangePrimaryDark"
+        android:layout_below="@id/iv_add_image"
+        />
+</RelativeLayout>

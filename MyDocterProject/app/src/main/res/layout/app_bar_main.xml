@@ -42,7 +42,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginTop="124dp"
-                    android:background="@color/greenPrimary"
+                    android:background="@color/greenBackground"
                     android:orientation="vertical">
 
                     <TextView
@@ -91,13 +91,13 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:layout_margin="8dp"
-                    android:text="@string/search_title_toolbar"
-                    android:textColor="@color/greyDark"
-                    />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_margin="8dp"
+                android:text="@string/search_title_toolbar"
+                android:textColor="@color/greyDark"
+                />
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -135,8 +135,9 @@
                     android:layout_below="@+id/tv_category"
                     android:scrollbars="vertical" />
             </RelativeLayout>
-
         </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
+
+
 
 </android.support.design.widget.CoordinatorLayout>
